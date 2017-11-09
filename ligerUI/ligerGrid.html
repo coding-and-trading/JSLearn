@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>first angular</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <link href="./lib.css" rel="stylesheet">
+    <link href="./lib/jquery-ui.css" rel="stylesheet">
+    <script src="./lib/jquery/jquery-1.9.0.min.js"></script>
+    <script src="./lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="./lib/ligerUI/js/ligerui.min.js"></script>
+    <script src="./lib/json2.js"></script>
+    <script src="./lib/json2.js"></script>
+</head>
+<body>
+    <div id="mainGrid"></div>
+    <script type="text/javascript">
+        var grid = (function() {
+            var $grid = null,
+                griddata = [
+                    { id: '01', name: '部门01' },
+                    { id: '02', name: '部门02' },
+                    { id: '03', name: '部门03' },
+                    { id: '04', name: '部门04' },
+                    { id: '05', name: '部门05' },
+                    { id: '06', name: '部门06' },
+                    { id: '07', name: '部门07' }
+                ],
+                init;
+            
+            init = function () {
+                $grid = $("#mainGrid").ligerGrid({
+                    columns: [
+                        { name: 'id', display: '序号', width: 200 },
+                        { name: 'name', display: '名称', width: 300 }
+                    ],
+                    data: { Rows: griddata }
+                });
+            };
+
+            return {
+                init: init
+            }
+        })();
+
+        grid.init();
+    </script>
+
+</body>
+</html>
